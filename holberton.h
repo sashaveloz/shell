@@ -13,5 +13,6 @@
 char *prompt(void);
 char **split(char *lineptr);
 int execute(char **arg, char **av, char **env, char *lineptr, int nprocs);
+char *_getpath(char **env);
 
 #endif /* HOLBERTON_H */
