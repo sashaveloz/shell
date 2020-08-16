@@ -6,7 +6,7 @@
  * Return: array of string or NULL
  */
 
-char **split(char *lineptr);
+char **split(char *lineptr)
 {
 	char **arg = NULL, *token = NULL;
 	int count = 0, space = 0;
