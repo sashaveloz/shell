@@ -9,7 +9,7 @@
 char **split(char *lineptr)
 {
 	char **arg = NULL, *token = NULL;
-	int count = 0, space = 0;
+	size_t count = 0, space = 0;
 
 	if (lineptr == NULL)
 		return (NULL);
