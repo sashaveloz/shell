@@ -10,8 +10,14 @@ char *prompt(void)
 	char *lineptr = NULL;
 	size_t nbytes = 0;
 
-	write(STDOUT_FILENO, "$ ", 2);
+	if (isatty(STDIN_FILENO))
+		write(STDOUT_FILENO, "$ ", 2);
+
 	if (getline(&lineptr, &nbytes, stdin) == -1)
+	{
+		free(lineptr);
 		return (NULL);
+	}
+
 	return (lineptr);
 }

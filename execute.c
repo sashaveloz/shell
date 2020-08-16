@@ -14,7 +14,7 @@ int execute(char **arg, char **av, char **env, char *lineptr, int nprocs)
 {
 	pid_t child;
 	int status;
-	char *format = "%s: %d: %s: \n";
+	char *format = "%s: %d: %s: not found\n";
 
 	child = fork();
 
