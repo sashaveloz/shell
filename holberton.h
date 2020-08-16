@@ -11,5 +11,7 @@
 #include <errno.h>
 
 char *prompt(void);
+char **split(char *lineptr);
+int execute(char **arg, char **av, char **env, char *lineptr, int nprocs);
 
 #endif /* HOLBERTON_H */
