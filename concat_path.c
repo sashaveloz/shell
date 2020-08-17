@@ -9,7 +9,7 @@
 
 int concat_path(char **arg, char **env)
 {
-	char *token NULL, *path = NULL, *dir = NULL;
+	char *token = NULL, *path = NULL, *dir = NULL;
 	size_t folder, command;
 	struct stat stat_buf;
 

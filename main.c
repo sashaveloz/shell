@@ -11,7 +11,7 @@
 int main(int ac, char **av, char **env)
 {
 	char *lineptr = NULL, **arg = NULL;
-	int nprocs = 0, _exit = 0;
+	int nprocs = 0, _exit = 0, check = 0;
 	(void)ac;
 
 	while (1)
@@ -21,9 +21,12 @@ int main(int ac, char **av, char **env)
 		{
 			nprocs++;
 			arg = split(lineptr);
+			check = concat_path(&arg[0], env);
 			if (!arg)
 				continue;
 			_exit = execute(arg, av, env, lineptr, nprocs);
+			if (check == 0)
+				free(arg[0]);
 			free(arg);
 		}
 		else
