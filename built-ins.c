@@ -22,3 +22,21 @@ void exit_b(char **arg, char *lineptr, int _exit)
 	free(arg);
 	exit(status);
 }
+
+/**
+ *print_env - Built-in to enviroment
+ *@env: Enviroment
+ *Return: 0
+ */
+
+void print_env(char **env)
+{
+	size_t run = 0;
+
+	while (env[run])
+	{
+		write(STDOUT_FILENO, env[run], strlen(env[run]));
+		write(STDOUT_FILENO, "\n", 1);
+		run++;
+	}
+}
