@@ -19,7 +19,7 @@ char **split(char *lineptr)
 		if (lineptr[count] == ' ')
 			space++;
 	}
-	if ((space + 1) == strlen(lineptr))
+	if ((space + 1) == _strlen(lineptr))
 		return (NULL);
 	arg = malloc(sizeof(char *) * (space + 2));
 	if (arg == NULL)

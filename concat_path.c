@@ -19,19 +19,19 @@ int concat_path(char **arg, char **env)
 	if (!path)
 		return (-1);
 	token = strtok(path, ":");
-	command = strlen(*arg);
+	command = _strlen(*arg);
 	while (token)
 	{
-		folder = strlen(token);
+		folder = _strlen(token);
 		dir = malloc(sizeof(char) * (folder + command + 2));
 		if (!dir)
 		{
 			free(path);
 			return (-1);
 		}
-		dir = strcpy(dir, token);
-		strcat(dir, "/");
-		strcat(dir, *arg);
+		dir = _strcpy(dir, token);
+		_strcat(dir, "/");
+		_strcat(dir, *arg);
 
 		if (stat(dir, &stat_buf) == 0)
 		{

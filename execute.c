@@ -6,11 +6,12 @@
  *@av: Has the name of our program
  *@env: Environment
  *@lineptr: Digited line for the user
- *@nprocs: Number of process
+ *@np: Number of process
+ *@c: Checker
  *Return: 0 success
  */
 
-int execute(char **arg, char **av, char **env, char *lineptr, int nprocs)
+int execute(char **arg, char **av, char **env, char *lineptr, int np, int c)
 {
 	pid_t child;
 	int status;
@@ -22,7 +23,9 @@ int execute(char **arg, char **av, char **env, char *lineptr, int nprocs)
 	{
 		if (execve(arg[0], arg, env) == -1)
 		{
-			fprintf(stderr, format, av[0], nprocs, arg[0]);
+			fprintf(stderr, format, av[0], np, arg[0]);
+			if (!c)
+				free(arg[0]);
 			free(arg);
 			free(lineptr);
 			exit(errno);

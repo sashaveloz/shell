@@ -35,7 +35,7 @@ void print_env(char **env)
 
 	while (env[run])
 	{
-		write(STDOUT_FILENO, env[run], strlen(env[run]));
+		write(STDOUT_FILENO, env[run], _strlen(env[run]));
 		write(STDOUT_FILENO, "\n", 1);
 		run++;
 	}

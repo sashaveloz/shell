@@ -11,7 +11,7 @@
 int main(int ac, char **av, char **env)
 {
 	char *lineptr = NULL, **arg = NULL;
-	int nprocs = 0, _exit = 0, check = 0;
+	int np = 0, _exit = 0, c = 0;
 	(void)ac;
 
 	while (1)
@@ -19,19 +19,22 @@ int main(int ac, char **av, char **env)
 		lineptr = prompt();
 		if (lineptr)
 		{
-			nprocs++;
+			np++;
 			arg = split(lineptr);
 			if (!arg)
+			{
+				free(lineptr);
 				continue;
-			if (!strcmp(arg[0], "exit"))
+			}
+			if (!_strcmp(arg[0], "exit"))
 				exit_b(arg, lineptr, _exit);
-			if (!strcmp(arg[0], "env"))
+			if (!_strcmp(arg[0], "env"))
 				print_env(env);
 			else
 			{
-				check = concat_path(&arg[0], env);
-				_exit = execute(arg, av, env, lineptr, nprocs);
-				if (check == 0)
+				c = concat_path(&arg[0], env);
+				_exit = execute(arg, av, env, lineptr, np, c);
+				if (c == 0)
 					free(arg[0]);
 			}
 			free(arg);
