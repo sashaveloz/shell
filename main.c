@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * main - Principal file for shell
+ *main - Principal file for shell
  *@ac: Argument count
  *@av: Argument value
  *@env: Environment
- * Return: 0
+ *Return: 0
  */
 
 int main(int ac, char **av, char **env)
@@ -21,9 +21,12 @@ int main(int ac, char **av, char **env)
 		{
 			nprocs++;
 			arg = split(lineptr);
-			check = concat_path(&arg[0], env);
 			if (!arg)
 				continue;
+			if (!strcmp(arg[0], "exit"))
+				exit_b(arg, lineptr, _exit)
+
+			check = concat_path(&arg[0], env);
 			_exit = execute(arg, av, env, lineptr, nprocs);
 			if (check == 0)
 				free(arg[0]);
@@ -35,6 +38,7 @@ int main(int ac, char **av, char **env)
 				write(STDOUT_FILENO, "\n", 1);
 			exit(_exit);
 		}
+		free(lineptr);
 	}
 	return (_exit);
 }

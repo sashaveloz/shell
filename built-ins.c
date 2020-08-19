@@ -1,0 +1,24 @@
+#include "holberton.h"
+
+/**
+ *exit_b - Built-in to exit
+ *@arg: Arguments
+ *@lineptr: Input string
+ *@_exit: Number of exit
+ */
+
+void exit_b(char **arg, char *lineptr, int _exit)
+{
+	int status = 0;
+
+	if (!arg[1])
+	{
+		free(lineptr);
+		free(arg);
+		exit(_exit);
+	}
+	status = atoi(arg[1]);
+	free(lineptr);
+	free(arg);
+	exit(status);
+}
