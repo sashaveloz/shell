@@ -1,0 +1,57 @@
+.TH shell 3 "August 13, 2020" "simple_shell man page"
+
+.SH NAME
+simple_shell
+
+.SH DESCRIPTION
+
+.PP
+Shell is a program that takes commands from the keyboard and gives them to the operating system to perform.
+
+.PP
+simple_shell is a Command line interpreter, which includes the
+basic functionality of a Unix shell.
+
+.SH FILES
+.B Libraries
+.PP
+#include <stdio.h>
+.PP
+#include <unistd.h>
+.PP
+#include <stdlib.h>
+.PP
+#include <string.h>
+.PP
+#include <sys/types.h>
+.PP
+#include <sys/wait.h>
+
+.B Files
+.PP
+holberton.h
+
+.B Functions
+.PP
+_strcat.c
+.PP
+_strcpy.c
+.PP
+_strcmp.h
+.PP
+_strlen.c
+.PP
+_strncmp.c
+
+.SH COMPILE
+.PP
+Our shell will be compiled this way:
+.PP
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
+.SH EXAMPLES
+...
+
+.SH AUTHORS
+
+Valentina Castillo Gonzalez, Sasha Martina Veloz.
