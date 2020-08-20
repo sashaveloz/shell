@@ -103,18 +103,18 @@ You may also need to use the next flag -gccdb3.
 
 Your shell should work like this in interactive mode:
 
-```c
+```bash
 $ ./hsh
 ($) /bin/ls
 hsh main.c shell.c
 ($)
 ($) exit
 $
-```c
+
 
 But also in non-interactive mode:
 
-```c
+```bash
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
 $
@@ -126,9 +126,9 @@ $ cat test_ls_2 | ./hsh
 hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
-```c
 
-*In this project one of the requirements was to perform the follwing tasks;*
+
+*In this project one of the requirements was to perform the following tasks;*
 
 ### 0. [README.md](https://github.com/sashaveloz/simple_shell/blob/master/README.md),[man](https://github.com/sashaveloz/simple_shell/blob/master/man_1_simple_shell),[AUTHORS](https://github.com/sashaveloz/simple_shell/blob/master/AUTHORS).
 
