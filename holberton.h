@@ -23,5 +23,6 @@ size_t _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, char *src);
 size_t _strncmp(char *s1, char *s2, size_t n);
 size_t _strlen(char *s);
+void ctrl_c(int signal);
 
 #endif /* HOLBERTON_H */

@@ -14,6 +14,7 @@ int main(int ac, char **av, char **env)
 	int np = 0, _exit = 0, c = 0;
 	(void)ac;
 
+	signal(SIGINT, ctrl_c);
 	while (1)
 	{
 		lineptr = prompt();

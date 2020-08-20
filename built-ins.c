@@ -18,6 +18,11 @@ void exit_b(char **arg, char *lineptr, int _exit)
 		exit(_exit);
 	}
 	status = atoi(arg[1]);
+	if (status < 0)
+		status = 2;
+	if (status > 232)
+		status = 232;
+
 	free(lineptr);
 	free(arg);
 	exit(status);
@@ -39,4 +44,17 @@ void print_env(char **env)
 		write(STDOUT_FILENO, "\n", 1);
 		run++;
 	}
+}
+
+/**
+ *ctrl_c - To avoid closing the program when ctrl + c is pressed
+ *@signal: void
+ */
+
+void ctrl_c(int signal)
+{
+	(void)signal;
+
+	write(STDOUT_FILENO, "\n", 1);
+	write(STDOUT_FILENO, "$ ", 2);
 }
