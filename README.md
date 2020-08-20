@@ -1,24 +1,23 @@
-# Simple_Shell
+# Simple_Shell :octocat:
 
-## Introduction
+## Introduction :bell:
 
 This is a project (0x16 C) executed by Sasha Veloz and Valentina Castillo, in order to put into practice the
 knowledge acquired during the development of the 1st trimester of the engineering software program.
 
-## Description
+## Description :point_left:
 
 Simply put, the shell is a program that takes commands from the keyboard and gives them to the operating system to perform.
 
-## Requirements
+## Requirements :minidisc:
 
 * Your C programs and functions will be compiled with **gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic**.
 * All files were created and compiled on Ubuntu 14.04.4 LTS USING GCC 4.8.4 with the gcc flags: **-Wall -Werror -Wextra -Pedantic *.c'**
 * All files were linted for syntax and style with [Betty](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl).
 
-## Functions and system calls
+## Functions and system calls :phone:
 
 This functions and system calls are the only ones that we are allowed to use.
-
 
 |FUNCTION| MAN |
 |--------|-----|
@@ -28,7 +27,7 @@ This functions and system calls are the only ones that we are allowed to use.
 |closedir|man 3 closedir|
 |execve|man 2 execve|
 |exit|man 3 exit|
-| _exit|man 2 _exit|
+| \_exit|man 2 \_exit|
 |fflush|man 3 fflush|
 |fork|man 2 fork|
 |free|man 3 free|
@@ -53,7 +52,6 @@ This functions and system calls are the only ones that we are allowed to use.
 |wait4|man 2 wait4|
 |write|man 2 write|
 
-
 Additionally we will create the following functions for the proper execution of the simple_shell.
 
 |NAME|DESCRIPTION|
@@ -69,7 +67,7 @@ Additionally we will create the following functions for the proper execution of 
 
 For the execution of this project, we are also going to use our version of [str functions](https://github.com/sashaveloz/simple_shell/blob/master/str_functions.c), listed below:
 
-|File|	   Description| Man|
+|File| Description| Man|
 |--------|------------|--------|
 |_strcat.c|simulates original strcat|man 3 strcat|
 |_strcmp.c|simulates original strcmp|man 3 strcmp|
@@ -78,11 +76,11 @@ For the execution of this project, we are also going to use our version of [str 
 |_strncmp.c|simulates original strncmp|man 3 strncmp|
 |[holberton.h](https://github.com/sashaveloz/simple_shell/blob/master/holberton.h)|contains prototypes and libraries|NA|
 
-## [Flowchart](https://app.diagrams.net/#G1ghh92jjUK03Z4PWrC9xhUt3XwAdscjnw)
+## [Flowchart](https://app.diagrams.net/#G1ghh92jjUK03Z4PWrC9xhUt3XwAdscjnw) :loop:
 
 In this flowchart you can see the flow of our program.
 
-## Installation
+## Installation :computer:
 
 For you to use our simple_shell you have to clone this repository **"https://github.com/sashaveloz/simple_shell.git"**:
 
@@ -90,7 +88,7 @@ For you to use our simple_shell you have to clone this repository **"https://git
 * Compile: see installation instructions later.
 * Run the shell: ./hsh.
 
-## Compilation
+## Compilation :postbox:
 
 For this simple_shell to work correctly you have to use the next compilator:
 
@@ -98,8 +96,7 @@ For this simple_shell to work correctly you have to use the next compilator:
 
 You may also need to use the next flag -gccdb3. 
 
-
-## Usage
+## Usage :dvd:
 
 Your shell should work like this in interactive mode:
 
@@ -110,7 +107,7 @@ hsh main.c shell.c
 ($)
 ($) exit
 $
-
+```
 
 But also in non-interactive mode:
 
@@ -126,13 +123,13 @@ $ cat test_ls_2 | ./hsh
 hsh main.c shell.c test_ls_2
 hsh main.c shell.c test_ls_2
 $
+```
 
+*In this project one of the requirements was to perform the following tasks:*
 
-*In this project one of the requirements was to perform the following tasks;*
+### 0. [README.md](https://github.com/sashaveloz/simple_shell/blob/master/README.md),[man](https://github.com/sashaveloz/simple_shell/blob/master/man_1_simple_shell),[AUTHORS](https://github.com/sashaveloz/simple_shell/blob/master/AUTHORS)
 
-### 0. [README.md](https://github.com/sashaveloz/simple_shell/blob/master/README.md),[man](https://github.com/sashaveloz/simple_shell/blob/master/man_1_simple_shell),[AUTHORS](https://github.com/sashaveloz/simple_shell/blob/master/AUTHORS).
-
-* Write a README. 
+* Write a README.
 * Write a man for your shell.
 * You should have an AUTHORS file at the root of your repository, listing all.
 
@@ -188,10 +185,7 @@ Simple shell 0.4 +
 
 Blog post describing step by step what happens when you type ls -l and hit Enter in a shell.  
 
+## Authors :dancers:
 
-## Authors
-
-***Valentina Castillo***
-Twitter [@diavale86](https://twitter.com/diavale86)  
-***Sasha Martina Veloz***
-Twitter [@velozsasha](https://twitter.com/velozsasha)
+* **Valentina Castillo** | [Twitter](https://twitter.com/diavale86) | [Github](https://github.com/diavale86) |
+* **Sasha Martina Veloz** | [Twitter](https://twitter.com/velozsasha) | [Github](https://github.com/sashaveloz) |
