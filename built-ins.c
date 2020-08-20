@@ -5,6 +5,8 @@
  *@arg: Arguments
  *@lineptr: Input string
  *@_exit: Number of exit
+ *@np: Number of process
+ *@av: Name of program
  */
 
 void exit_b(char **arg, char *lineptr, int _exit, int np, char **av)
@@ -12,6 +14,7 @@ void exit_b(char **arg, char *lineptr, int _exit, int np, char **av)
 	int status = 0, idx;
 	char *format = "%s: %d: exit: Illegal number: %d\n";
 	char *format1 = "%s: %d: exit: Illegal number: %s\n";
+
 	if (!arg[1])
 	{
 		free(lineptr);
@@ -20,7 +23,7 @@ void exit_b(char **arg, char *lineptr, int _exit, int np, char **av)
 	}
 	for (idx = 0; arg[1][idx] != '\0'; idx++)
 	{
-		if(arg[1][idx] < 48 && arg[1][idx] > 57)
+		if (arg[1][idx] < 48 && arg[1][idx] > 57)
 		{
 			fprintf(stderr, format1, av[0], np, arg[1]);
 			free(lineptr);
@@ -32,7 +35,7 @@ void exit_b(char **arg, char *lineptr, int _exit, int np, char **av)
 	if (status < 0)
 	{
 		status = 2;
-		fprintf(stderr, format, av[0], np, status); 
+		fprintf(stderr, format, av[0], np, status);
 	}
 	if (status == 1000)
 		status = 232;
