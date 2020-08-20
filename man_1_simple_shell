@@ -1,10 +1,9 @@
-.TH shell 3 "August 13, 2020" "simple_shell man page"
+.TH simple_shell 1 "August 13, 2020" "simple_shell man page"
 
 .SH NAME
 simple_shell
 
 .SH DESCRIPTION
-
 .PP
 Shell is a program that takes commands from the keyboard and gives them to the operating system to perform.
 
@@ -12,7 +11,10 @@ Shell is a program that takes commands from the keyboard and gives them to the o
 simple_shell is a Command line interpreter, which includes the
 basic functionality of a Unix shell.
 
-.SH FILES
+.SH SYNOPSIS
+.PP
+To use this, we will first need an input from the user. Our shell will take that input and save it with getline() function. Then, it will split the arguments and save them in an array of strings. After that, it will search for built-ins or aliases, and the environment. Later on it will find the path and cocatenate it to the command, to fork the process and execute it after that. 
+
 .B Libraries
 .PP
 #include <stdio.h>
@@ -50,7 +52,43 @@ Our shell will be compiled this way:
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 .SH EXAMPLES
-...
+.B Your shell should work like this in interactive mode:
+.PP
+$ ./hsh
+.PP
+($) /bin/ls
+.PP
+hsh main.c shell.c
+.PP
+($)
+.PP
+($) exit
+.PP
+$
+
+.B But also in non-interactive mode:
+.PP
+$ echo "/bin/ls" | ./hsh
+.PP
+hsh main.c shell.c test_ls_2
+.PP
+$
+.PP
+$ cat test_ls_2
+.PP
+/bin/ls
+.PP
+/bin/ls
+.PP
+$
+.PP
+$ cat test_ls_2 | ./hsh
+.PP
+hsh main.c shell.c test_ls_2
+.PP
+hsh main.c shell.c test_ls_2
+.PP
+$
 
 .SH AUTHORS
 
