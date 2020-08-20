@@ -17,7 +17,7 @@ int concat_path(char **arg, char **env)
 		return (-1);
 	path = _getpath(env);
 	if (!path)
-		return (-1);
+		path = "/bin:";
 	token = strtok(path, ":");
 	command = _strlen(*arg);
 	while (token)
