@@ -16,6 +16,8 @@ char *_getpath(char **env)
 
 	if (env[row] == NULL)
 		return (NULL);
+	if (env[row][5] == '\0')
+		return (NULL);
 
 	for (column = 5; env[row][column]; column++, nchar++)
 		;
