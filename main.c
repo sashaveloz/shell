@@ -28,7 +28,7 @@ int main(int ac, char **av, char **env)
 				continue;
 			}
 			if (!_strcmp(arg[0], "exit"))
-				exit_b(arg, lineptr, _exit);
+				exit_b(arg, lineptr, _exit, np, av);
 			if (!_strcmp(arg[0], "env"))
 				print_env(env);
 			else

@@ -15,7 +15,7 @@ char **split(char *lineptr);
 int execute(char **arg, char **av, char **env, char *lineptr, int np, int c);
 char *_getpath(char **env);
 int concat_path(char **arg, char **env);
-void exit_b(char **arg, char *lineptr, int _exit);
+void exit_b(char **arg, char *lineptr, int _exit, int np, char **av);
 void print_env(char **env);
 
 char *_strcat(char *dest, char *src);
